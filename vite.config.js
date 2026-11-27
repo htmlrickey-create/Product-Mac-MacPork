@@ -5,8 +5,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   devtools: {
     // Remove this `apply` property to enable devtools for build as well
-    apply: 'serve',
-    base: '/Product-Mac-MacPork',
+    base: '/Product-Mac-MacPork/',
+    plugins: [react()],
   },
-  plugins: [react()],
+
 })
