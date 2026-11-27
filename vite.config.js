@@ -1,12 +1,7 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
 export default defineConfig({
-  devtools: {
-    // Remove this `apply` property to enable devtools for build as well
-    base: '/Product-Mac-MacPork/',
-    plugins: [react()],
-  },
-
+  base: '/Product-Mac-MacPork/',
+  plugins: [react()],
 })
