@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loding-screen {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    background: #ffffb3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.potato-animation {
+    animation: potato-appear 1s ease-out forwards,
+               potato-shake 1.5s ease-in-out 1s infinite;
+}
+
+.potato-animation img {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes potato-appear {
+
+    0% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@keyframes potato-shake {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+.loding-text {
+    margin-top: 30px;
+
+    font-size: 18px;
+    letter-spacing: 5px;
+
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+}

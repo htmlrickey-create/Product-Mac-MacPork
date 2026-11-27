@@ -1,0 +1,467 @@
+.Heros-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 50px;
+    background: linear-gradient(
+        135deg,
+        #171717,
+        #48251c,
+        #594019,
+        #36251d,
+        #171717
+    );
+    color: white;
+
+    overflow: hidden;
+}
+.Heros-info {
+    width: 45%;
+    max-width: 650px;
+    z-index: 2;
+}
+
+.Heros-info h6 {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #999;
+
+    margin-bottom: 15px;
+}
+
+.Heros-info h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+/* 初期表示テキスト */
+.Heros-info > p {
+    color: #aaa;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.information-panel {
+    margin-top: 20px;
+
+    animation: information-appear 0.6s ease forwards;
+}
+
+.speaker-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+    border: 1px solid white;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    z-index: 10;
+    animation: speakerAppear 0.5s ease-out;
+}
+@keyframes speakerAppear {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    70% {
+        opacity: 1;
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+/* 小見出し */
+.information-subtitle {
+    display: block;
+
+    font-size: 13px;
+    letter-spacing: 6px;
+
+    color: var(--item-color);
+
+    margin-bottom: 15px;
+}
+
+/* 情報タイトル */
+.information-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 25px;
+
+    position: relative;
+}
+
+/* タイトルの装飾線 */
+.information-title::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+    height: 3px;
+
+    background: var(--item-color);
+
+    margin-top: 20px;
+}
+
+/* 説明 */
+.information-discription {
+    font-size: 1rem;
+    line-height: 2;
+
+    color: #ccc;
+
+    margin-bottom: 30px;
+}
+
+
+.information-items {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+/* 個別タグ */
+.information-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border: 1px solid var(--item-color);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.05);
+
+    color: var(--item-color);
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.information-tag:hover {
+    background: var(--item-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+@keyframes information-appear {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.circle-container {
+    position: relative;
+
+    width: 700px;
+    height: 700px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 5%;
+}
+
+.language-switch {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+
+    display: flex;
+    gap: 8px;
+
+    z-index: 100;
+}
+
+.language-switch button {
+    padding: 8px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.language-switch button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+.language-switch button.active {
+    background: #F06B38;
+    border-color: #F06B38;
+
+    box-shadow: 0 0 15px rgba(240, 107, 56, 0.35);
+}
+
+/* 円 */
+.orbit {
+    position: absolute;
+
+    width: 800px;
+    height: 800px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+}
+
+.macpork-image {
+    width: 900px;
+    height: 900px;
+
+    object-fit: contain;
+
+    position: absolute;
+    z-index: 1;
+
+    cursor: pointer;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* 浮遊 */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+
+
+.circle-button {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+    border: 1px solid white;
+
+    background: #292929;
+    color: white;
+
+    cursor: pointer;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(var(--angle))
+        translate(400px)
+        rotate(calc(var(--angle) * -1));
+
+    transition:
+        transform 0.8s cubic-bezier(.2,.8,.2,1),
+        background 0.4s,
+        color 0.4s,
+        border 0.4s,
+        box-shadow 0.4s;
+}
+
+
+/* ボタン hover */
+.circle-button:hover {
+    background: white;
+    color: black;
+
+    box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+/* 選択ボタン */
+.circle-button.selected {
+    background: var(--item-color);
+    color: white;
+    border: 2px solid var(--item-color);
+
+    box-shadow: 0 0 35px var(--item-color);
+
+    transform:
+        translate(-50%, -50%)
+        rotate(180deg)
+        translate(800px)
+        rotate(-180deg);
+}
+
+
+.reset-button {
+    margin-top: 30px;
+
+    padding: 12px 25px;
+
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+
+    border-radius: 30px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.reset-button:hover {
+    background: white;
+    color: black;
+}
+/* 公式リンク欄 */
+.product-footer {
+    width: 100%;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: #171717;
+    color: #888;
+
+    text-align: center;
+}
+
+.product-footer p {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #aaa;
+}
+
+.product-footer a {
+    color: #F06B38;
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.product-footer a:hover {
+    color: #ff966e;
+    text-decoration: underline;
+}
+
+.footer-copy {
+    font-size: 11px;
+    color: #555;
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+
+    .Heros-container {
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 40px 20px;
+        gap: 50px;
+        min-height: auto;
+        padding-bottom: 90px;
+    }
+
+    .Heros-info {
+        width: 100%;
+        max-width: none;
+    }
+
+    .Heros-info h1 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    .information-title {
+        font-size: 2rem;
+    }
+
+    .circle-container {
+        width: 320px;
+        height: 320px;
+
+        margin: 0;
+    }
+
+    .orbit {
+        width: 300px;
+        height: 300px;
+    }
+
+    .macpork-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    .circle-button {
+        width: 80px;
+        height: 80px;
+
+        font-size: 12px;
+
+        transform:
+            translate(-50%, -50%)
+            rotate(var(--angle))
+            translate(150px)
+            rotate(calc(var(--angle) * -1));
+    }
+
+    .circle-button.selected {
+        transform:
+        translate(-50%, -50%)
+        translate(100px, -150px);
+
+        background: var(--item-color);
+        color: white;
+        border: 2px solid var(--item-color);
+        box-shadow: 0 0 25px var(--item-color);
+    }
+
+    .information-tag {
+        padding: 12px 18px;
+    }
+}
